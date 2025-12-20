@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 
 class Plant:
+    nb_plants = 0
 
     def __init__(self, name: str, height: int, age: int):
         '''
@@ -9,6 +10,7 @@ class Plant:
         self.name = name
         self.height = height
         self.date = age
+        Plant.nb_plants += 1
 
     def grow(self):
         self.height += 1
@@ -31,4 +33,4 @@ if __name__ == "__main__":
     print("=== Plant Factory Output ===")
     for plant in plants:
         plant.get_info()
-    print("\nTotal plants created: ", len(plants))
+    print("\nTotal plants created: ", Plant.nb_plants)

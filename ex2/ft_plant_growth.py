@@ -37,11 +37,13 @@ if __name__ == "__main__":
     plants = [plant1, plant2, plant3]
     print("=== Day 1 ===")
     plant1.get_info()
-    for k in range(6):
+    i = 0
+    while i < 6:
         diff += 1
         for plant in plants:
             plant.grow()
             plant.age()
+        i += 1
     print("=== Day 7 ===")
     plant1.get_info()
     print(f"Growth this week: +{diff}cm")
