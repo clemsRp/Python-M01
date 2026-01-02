@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
 class SecurePlant:
+    '''
+    Simulate the behaviour of a plant handling errors
+    '''
 
-    def __init__(self, name: str, height: int, age: int):
+    def __init__(self, name: str, height: int, age: int) -> None:
         '''
         Initialize the Plant object by setting up the basic vairables,
         verifying that all inputs are valids
@@ -14,7 +17,7 @@ class SecurePlant:
         self.__age = age
         print("Plant created:", self.name)
 
-    def set_height(self, h: int):
+    def set_height(self, h: int) -> None:
         '''
         Modifying the height if the new value is valid
         '''
@@ -25,9 +28,9 @@ class SecurePlant:
             self.__height = h
             print(f"Height updated: {self.__height}cm [OK]")
 
-    def get_height(self):
+    def get_height(self) -> int:
         '''
-        Returning the height in order to protect the direct variable access
+        Return the height in order to protect the direct variable access
         '''
         return self.__height
 
@@ -42,9 +45,9 @@ class SecurePlant:
             self.__age = age
             print(f"Age updated: {self.__age}cm [OK]")
 
-    def get_age(self):
+    def get_age(self) -> int:
         '''
-        Returning the age in order to protect the direct variable access
+        Return the age in order to protect the direct variable access
         '''
         return self.__age
 

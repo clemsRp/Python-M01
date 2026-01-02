@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
 class Plant:
+    '''
+    Simulate the behaviour of a plant
+    '''
 
-    def __init__(self, name: str, height: int, age: int):
+    def __init__(self, name: str, height: int, age: int) -> None:
         '''
         Initialize the Plant object by setting up the basic vairables,
         verifying that all inputs are valids
@@ -14,9 +17,9 @@ class Plant:
         self.__age = age
         print("Plant created:", self.name)
 
-    def set_height(self, h: int):
+    def set_height(self, h: int) -> None:
         '''
-        Modifying the height if the new value is valid
+        Modify the height if the new value is valid
         '''
         if h < 0:
             print(f"\nInvalid operation attempted: height {h}cm [REJECTED]")
@@ -25,15 +28,15 @@ class Plant:
             self.__height = h
             print(f"Height updated: {self.__height}cm [OK]")
 
-    def get_height(self):
+    def get_height(self) -> int:
         '''
-        Returning the height in order to protect the direct variable access
+        Return the height in order to protect the direct variable access
         '''
         return self.__height
 
-    def set_age(self, age: int):
+    def set_age(self, age: int) -> None:
         '''
-        Modifying the age if the new value is valid
+        Modify the age if the new value is valid
         '''
         if age < 0:
             print(f"\nInvalid operation attempted: age {age}cm [REJECTED]")
@@ -42,13 +45,13 @@ class Plant:
             self.__age = age
             print(f"Age updated: {self.__age}cm [OK]")
 
-    def get_age(self):
+    def get_age(self) -> int:
         '''
-        Returning the age in order to protect the direct variable access
+        Return the age in order to protect the direct variable access
         '''
         return self.__age
 
-    def get_info(self, plant_type: str):
+    def get_info(self, plant_type: str) -> str:
         '''
         Return the state of the Plant
         '''
@@ -57,21 +60,24 @@ class Plant:
 
 
 class Flower(Plant):
+    '''
+    Simulate the behaviour of a flower
+    '''
 
-    def __init__(self, name: str, height: int, age: int, color: str):
+    def __init__(self, name: str, height: int, age: int, color: str) -> None:
         '''
         Initialize the Flower object by using the Plant class
         '''
         super().__init__(name, height, age)
         self.color = color
 
-    def bloom(self):
+    def bloom(self) -> None:
         '''
         Simulate the Flower bloom
         '''
         print(self.name, " is blooming beautifully!\n")
 
-    def print_info(self):
+    def print_info(self) -> None:
         '''
         Print datas about the Flower object
         '''
@@ -80,22 +86,26 @@ class Flower(Plant):
 
 
 class Tree(Plant):
+    '''
+    Simulate the behaviour of a tree
+    '''
 
-    def __init__(self, name: str, height: int, age: int, trunk_diameter: int):
+    def __init__(self, name: str, height: int, age: int,
+                 trunk_diameter: int) -> None:
         '''
         Initialize the Tree object by using the Plant class
         '''
         super().__init__(name, height, age)
         self.trunk_diameter = trunk_diameter
 
-    def produce_shade(self):
+    def produce_shade(self) -> None:
         '''
         Simulate the Tree shade
         '''
         area = 5 * self.trunk_diameter * self.get_height()
         print(self.name, f"provides {area} square meters of shade\n")
 
-    def print_info(self):
+    def print_info(self) -> None:
         '''
         Print datas about the Tree object
         '''
@@ -104,9 +114,12 @@ class Tree(Plant):
 
 
 class Vegetable(Plant):
+    '''
+    Simulate the behaviour of a vegetable
+    '''
 
-    def __init__(self, name: str, height: int, age: int,
-                 harvest_season: str, nutritional_value: str):
+    def __init__(self, name: str, height: int, age: int, harvest_season: str,
+                 nutritional_value: str) -> None:
         '''
         Initialize the Vegetable object by using the Plant class
         '''
@@ -114,7 +127,7 @@ class Vegetable(Plant):
         self.harvest_season = harvest_season
         self.nutritional_value = nutritional_value
 
-    def print_info(self):
+    def print_info(self) -> None:
         '''
         Print datas about the Vegetable object
         '''

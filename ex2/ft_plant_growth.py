@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 
 class Plant:
+    '''
+    Simulate the behaviour of a plant
+    '''
 
-    def __init__(self, name: str, height: int, age: int):
+    def __init__(self, name: str, height: int, age: int) -> None:
         '''
         Initialize the Plant object by setting up the basic vairables
         '''
@@ -10,19 +13,19 @@ class Plant:
         self.height = height
         self.date = age
 
-    def grow(self):
+    def grow(self) -> None:
         '''
         Simulate the grows of a Plant increasing the height variable
         '''
         self.height += 1
 
-    def age(self):
+    def age(self) -> None:
         '''
         Simulate the ages of a Plant increasing the age variable
         '''
         self.date += 1
 
-    def get_info(self):
+    def get_info(self) -> None:
         '''
         Print some datas about the Plant obect state
         '''
