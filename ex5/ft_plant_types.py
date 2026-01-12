@@ -10,8 +10,12 @@ class Plant:
         Initialize the Plant object by setting up the basic vairables,
         verifying that all inputs are valids
         '''
-        assert height >= 0, "Height should be a positive value"
-        assert age >= 0, "Age should be a positive value"
+        if height < 0:
+            print("Height should be a positive value")
+            return
+        if age < 0:
+            print("Age should be a positive value")
+            return
         self.name = name
         self.__height = height
         self.__age = age
