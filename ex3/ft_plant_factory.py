@@ -34,15 +34,36 @@ class Plant:
         print(f"Created: {self.name} ({self.height}cm, {self.date} days)")
 
 
+class Factory:
+
+    def __init__(self):
+        self.plants = []
+        self.nb_plants = 0
+
+    def add_plants(self, plants: list):
+        try:
+            for plant in plants:
+                self.plants.append(Plant(plant[0], plant[1], plant[2]))
+                self.nb_plants += 1
+        except Exception as e:
+            print("Error:", e)
+
+    def get_infos(self):
+        for plant in self.plants:
+            plant.get_info()
+
+
 if __name__ == "__main__":
     plants = [
-        Plant("Rose", 25, 30),
-        Plant("Oak", 200, 365),
-        Plant("Cactus", 5, 90),
-        Plant("Sunflower", 80, 45),
-        Plant("Fern", 15, 120)
+        ("Rose", 25, 30),
+        ("Oak", 200, 365),
+        ("Cactus", 5, 90),
+        ("Sunflower", 80, 45),
+        ("Fern", 15, 120)
     ]
     print("=== Plant Factory Output ===")
-    for plant in plants:
-        plant.get_info()
+    factory = Factory()
+    factory.add_plants(plants)
+    factory.get_infos()
+
     print("\nTotal plants created: ", Plant.nb_plants)
